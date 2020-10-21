@@ -1,1 +1,20 @@
-﻿<h2>Welcome to my new app!<h2>
+﻿@model ExchangesModel
+
+<h2>Welcome to my new app!</h2>
+
+@if (Model is { })
+{
+    <div class="alert alert-primary" role="alert">
+        <b>@Model.Name</b> (length: @Model.Name.Length)
+    </div>
+}
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(x => x.Name, "Enter your name: ")
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = "Name" })
+        @Html.ValidationMessage("Name")
+    </div>
+    <input type="submit" value="Save" class="btn btn-primary" />
+}

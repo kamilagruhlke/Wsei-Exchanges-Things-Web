@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Wsei.Exchanges.Things.Web.Models
 {
     public class ExchangesModel
     {
+        [Required]
+        public string Name { get; set; }
     }
 }
