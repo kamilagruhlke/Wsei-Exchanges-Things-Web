@@ -6,5 +6,10 @@ namespace Wsei.Exchanges.Things.Web.Models
     {
         [Required]
         public string Name { get; set; }
+
+        [Required]
+        public string Description { get; set; }
+
+        public bool IsVisible { get; set; }
     }
 }
